@@ -26,7 +26,11 @@ No test in either invoked suite is skipped.
 
 ## Current receipts
 
-The initial public CI receipt is pending repository publication. Replace this sentence only after the GitHub run is green.
+- Implementation commit: [`3f77f05b139f939e806495042c89fb074646bee8`](https://github.com/estelledc/system-design-08-url-shortener/commit/3f77f05b139f939e806495042c89fb074646bee8).
+- Public CI: [run 32154593404](https://github.com/estelledc/system-design-08-url-shortener/actions/runs/32154593404), completed successfully on 2026-08-18.
+- Node `22.23.2`, `24.19.0`, and `26.7.0` each reported 19 unit/HTTP tests plus 5 real PostgreSQL tests passed, 0 failed, and 0 skipped. Each job used PostgreSQL `17.6` and reported 0 dependency vulnerabilities.
+- Every job completed the process receipt: one mapping committed, one redirect attempt committed, the application was terminated with `SIGKILL`, the same owner/key/payload replayed the same code in a new process, a second redirect succeeded and committed, and the successor shut down gracefully. The final database counts were one mapping and two attempt events.
+- The 50,000-operation deterministic in-memory benchmark cleared its explicit 5,000 operations/s floor on all runners. Observed Linux rates were about 125,000-132,000 operations/s; they are not PostgreSQL, HTTP, random-code, or production-capacity measurements.
 
 ## Evidence boundary
 
